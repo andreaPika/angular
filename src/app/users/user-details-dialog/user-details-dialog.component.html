@@ -1,0 +1,18 @@
+<div class="dialog-overlay" *ngIf="showDialog">
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <h2>Dettagli Utente</h2>
+        <button class="close-button" (click)="closeDialog()">×</button>
+      </div>
+      <div class="dialog-body">
+        <p><strong>Nome:</strong> {{ data.firstName }} {{ data.lastName }}</p>
+        <p><strong>Email:</strong> {{ data.email }}</p>
+        <p><strong>Indirizzo:</strong> {{ data.address }}</p>
+        <p><strong>Numero Telefono:</strong> {{ data.phoneNumber }}</p>
+        <p><strong>Data di Nascita:</strong> {{ data.dateOfBirth }}</p>
+        <p><strong>Genere:</strong> {{ data.gender }}</p>
+        <p><strong>Ruolo:</strong> {{ data.role }}</p>
+    </div>
+  </div>
+  
+  

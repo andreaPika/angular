@@ -1,0 +1,29 @@
+<!-- user-list.component.html -->
+<div *ngIf="isLoading" class="loading">
+    <p>Caricamento in corso...</p>
+  </div>
+  
+  <div *ngIf="!isLoading">
+    <h2>{{ 'userList.title' | translate }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Ruolo</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.firstName }} {{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="viewUserDetails(user)">Dettagli</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

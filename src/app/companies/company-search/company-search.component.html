@@ -1,0 +1,38 @@
+<div class="search-container">
+  <!-- Campo di ricerca -->
+  <h2>Pagina di ricerche</h2>
+  
+  <mat-form-field appearance="fill" class="search-input">
+    <mat-label>Cerca aziende</mat-label>
+    <input
+      matInput
+      placeholder="Inserisci il nome dell'azienda"
+      [(ngModel)]="query"
+    />
+  </mat-form-field>
+
+  <!-- Bottone di ricerca -->
+  <button mat-flat-button color="primary" (click)="search()" class="search-button">Cerca</button>
+
+  <!-- Spinner di caricamento -->
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    <p>Ricerca in corso...</p>
+  </div>
+
+  <!-- Risultati trovati -->
+  <div class="results-container" *ngIf="company.length > 0; else noResults">
+    <h2>Risultati Ricerca</h2>
+    <ul>
+      <li  *ngFor="let companies of company" >
+        <strong>{{ companies.name }}</strong><br />
+      {{ companies.address }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Messaggio se non ci sono risultati -->
+  <ng-template #noResults>
+    <p *ngIf="!isLoading && query" class="no-results">Nessuna azienda trovata.</p>
+  </ng-template>
+</div>

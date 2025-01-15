@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Logo o titolo -->
+  <span class="navbar-title">{{ 'nav.title' | translate }}</span>
+  <!-- Barra di navigazione per gli utenti autenticati -->
+  <div class="navbar-menu" *ngIf="isAuthenticated">
+    <!-- Button to open the menu -->
+    <button mat-button [matMenuTriggerFor]="menu">{{ 'nav.menu' | translate }}</button>
+
+    <!-- Dropdown Menu -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+      <button mat-menu-item *ngIf="userRole === 'admin'" routerLink="/company-registration">{{ 'nav.companyRegistration' | translate }}</button>
+      <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client'" routerLink="/companyList">{{ 'nav.companyList' | translate }}</button>
+      <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client'" routerLink="/search-companies">{{ 'nav.searchCompany' | translate }}</button>
+      <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client' || userRole === 'company'" routerLink="/booking">{{ 'nav.booking' | translate }}</button>
+      <button mat-menu-item *ngIf="userRole === 'admin'" routerLink="/userList">{{ 'nav.userList' | translate }}</button>
+    </mat-menu>
+    <button mat-button routerLink="/profile">{{ 'nav.profile' | translate }}</button>
+    <button mat-button (click)="logout()">{{ 'nav.logout' | translate }}</button>
+    <img src="assets/image/it.png" alt="Italian" (click)="changeLang('it')" />
+    <img src="assets/image/en.png" alt="English" (click)="changeLang('en')" />
+  </div>
+
+  <!-- Link di benvenuto per utenti non autenticati -->
+  <div class="navbar-welcome" *ngIf="!isAuthenticated">
+    <button mat-button routerLink="/login">{{ 'nav.login' | translate }}</button>
+    <button mat-button routerLink="/">{{ 'nav.page' | translate }}</button>
+    <img src="assets/image/it.png" alt="Italian" (click)="changeLang('it')" />
+    <img src="assets/image/en.png" alt="English" (click)="changeLang('en')" />
+  </div>
+</mat-toolbar>

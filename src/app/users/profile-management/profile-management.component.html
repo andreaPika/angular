@@ -1,0 +1,95 @@
+<div class="profile-container">
+    <h2>Gestione Profilo</h2>
+    <form (ngSubmit)="updateProfile()" #profileForm="ngForm">
+      <!-- Nome -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          type="text"
+          name="firstName"
+          [(ngModel)]="user.firstName"
+          required
+        />
+      </mat-form-field>
+  
+      <!-- Cognome -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Cognome</mat-label>
+        <input
+          matInput
+          type="text"
+          name="lastName"
+          [(ngModel)]="user.lastName"
+          required
+        />
+      </mat-form-field>
+
+      <!-- gender -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Genere</mat-label>
+        <mat-select name="gender" [(ngModel)]="user.gender">
+          <mat-option *ngFor="let option of genderOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- dateOfBirth -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Data di Nascita</mat-label>
+        <input
+          matInput
+          type="text"
+          name="dateOfBirth"
+          [(ngModel)]="user.dateOfBirth"
+        />
+      </mat-form-field>     
+
+      <!-- address -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Indirizzo</mat-label>
+        <input
+          matInput
+          type="text"
+          name="address"
+          [(ngModel)]="user.address"
+        />
+      </mat-form-field>
+
+      <!-- Telefono -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Numero Telefono</mat-label>
+        <input
+          matInput
+          type="text"
+          name="phoneNumber"
+          [(ngModel)]="user.phoneNumber"
+        />
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="fill" class="profile-input">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+        />
+      </mat-form-field>
+  
+      <!-- Bottone di Salvataggio -->
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="!profileForm.form.valid"
+      >
+        Salva Modifiche
+      </button>
+      <a routerLink="/change-password">Change Password</a>
+    </form>
+  </div>
+  

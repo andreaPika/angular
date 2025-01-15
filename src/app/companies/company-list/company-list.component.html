@@ -1,0 +1,29 @@
+<!-- company-list.component.html -->
+<div *ngIf="isLoading" class="loading">
+    <p>Caricamento in corso...</p>
+  </div>
+  
+  <div *ngIf="!isLoading">
+    <h2>{{ 'companyList.title' | translate }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome Azienda</th>
+          <th>Indirizzo</th>
+          <th>Id</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td>{{ company.name }}</td>
+          <td>{{ company.address.street }} - {{ company.address.city }}</td>
+          <td>{{ company._id}}</td>
+          <td>
+            <button (click)="viewCompanyDetails(company)">Dettagli</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

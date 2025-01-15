@@ -1,0 +1,61 @@
+<div class="appointments-container" *ngIf="userRole === 'admin' || userRole === 'client'">
+  <h2>Appuntamenti per l'utente</h2>
+  <ul>
+    <li *ngFor="let appointment of userAppointments">
+      <strong>Titolo:</strong> {{ appointment.title }} <br />
+      <strong>Azienda:</strong> {{ appointment.company.name }} <br />
+      <strong>Data:</strong> {{ appointment.date | date: 'yyyy-MM-dd HH:mm' }} <br />
+      <strong>Descrizione:</strong> {{ appointment.details }}<br />
+      <strong>Status:</strong> {{ appointment.status }}
+    </li>
+  </ul>
+</div>
+<div class="appointments-container" *ngIf="userRole === 'company'">
+  <h2>Appuntamenti per l'azienda</h2>
+  <ul>
+    <li *ngFor="let appointment of companyAppointments">
+      <strong>Titolo:</strong> {{ appointment.title }} <br />
+      <strong>Utente:</strong> {{ appointment.user | json }} <br />
+      <strong>Data:</strong> {{ appointment.date | date: 'yyyy-MM-dd HH:mm' }} <br />
+      <strong>Descrizione:</strong> {{ appointment.details }} <br />
+      <strong>Status:</strong> {{ appointment.status }}
+    </li>
+  </ul>
+</div>
+<div class="booking-container" *ngIf="userRole === 'admin' || userRole === 'client'">
+    <!-- Calendario -->
+    <div class="booking-calendar">
+      <h2>Seleziona Data</h2>
+      <div class="calendar">
+        <full-calendar [options]="calendarOptions"></full-calendar><!-- Inserisci qui il tuo calendario, ad esempio con FullCalendar -->
+      </div>
+    </div>
+  
+    <!-- Modulo di prenotazione -->
+    <div class="booking-form-container">
+      <h2>{{ 'booking.title' | translate }}</h2>
+      <form (ngSubmit)="onSubmit()">
+        <label for="title">Titolo</label>
+        <input type="text" [(ngModel)]="title" name="title">
+
+        <label for="company">Azienda</label>
+        <select type="text" [(ngModel)]="companyId" name="companyId" required>
+          <mat-option value="" disabled>Select</mat-option>
+          <option *ngFor="let company of companies" [value]="company._id">{{ company.name }}</option>
+        </select>
+  
+          <!-- Campo per data e ora combinati -->
+          <label for="appointmentDateTime">Data e Ora Appuntamento</label>
+          <input [(ngModel)]="appointmentDateTime" name="appointmentDateTime" type="datetime-local" required>
+  
+        <label for="details">Dettagli (opzionale)</label>
+        <textarea type="text" [(ngModel)]="details" name="details"></textarea>
+  
+        <button type="submit">Prenota</button>
+  
+        <!-- Messaggi di errore -->
+       
+      </form>
+    </div>
+  </div>
+  

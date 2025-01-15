@@ -1,0 +1,128 @@
+/* Contenitore principale */
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sezione calendario */
+.booking-calendar {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-calendar h2 {
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.calendar {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Modulo di prenotazione */
+.booking-form-container {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form-container h2 {
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.booking-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.booking-form-container select,
+.booking-form-container input,
+.booking-form-container textarea {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.booking-form-container button {
+  padding: 10px;
+  background-color: #3f51b5;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.booking-form-container button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.booking-form-container textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Sezioni degli appuntamenti */
+.appointments-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-container h2 {
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.appointments-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.appointments-container li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.appointments-container li strong {
+  color: #3f51b5;
+}
+
+/* Stile responsivo */
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+  }
+
+  .booking-calendar,
+  .booking-form-container {
+    flex: 1 1 100%;
+  }
+}

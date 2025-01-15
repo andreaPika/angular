@@ -1,0 +1,27 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<div class="dashboard-container">
+    <mat-toolbar color="primary">
+      <span class="user-info">
+        <span>{{ 'dashboard.welcome' | translate }}, {{ user?.user?.firstName }} {{ user?.user?.lastName }}</span><br>
+        <button mat-button (click)="logout()">{{ 'dashboard.logout' | translate }}</button>
+      </span>
+    </mat-toolbar>
+  
+    <div class="dashboard-content">
+      <h2>{{ 'dashboard.overview' | translate }}</h2>
+      <strong>{{ user?.user?.role }}</strong>
+      <div *ngIf="user?.user?.role === 'admin'">
+        <!-- Altri contenuti specifici per Admin -->
+      </div>
+      <div *ngIf="user?.user?.role === 'professional'">
+        <!-- Altri contenuti specifici per il libero professionista -->
+      </div>
+      <div *ngIf="user?.user?.role === 'azienda'">
+        <!-- Altri contenuti specifici per il libero professionista -->
+      </div>
+      <div *ngIf="user?.user?.role === 'client'">
+        <!-- Altri contenuti specifici per il cliente finale -->
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,77 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 64px;
+    background-color: #3f51b5; /* Colore primario */
+    color: #ffffff;
+  }
+  
+  .navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-menu button {
+    color: #1e1194d3;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .navbar-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+    .navbar-menu img {
+      width: 40px;   /* Set width of the flag image */
+      height: 40px;  /* Set height of the flag image */
+      cursor: pointer; /* Change cursor to pointer on hover */
+      margin-left: 15px; /* Add space between flags */
+      transition: transform 0.5s ease; /* Smooth hover effect */
+  }
+
+  /* Hover effect for flags */
+  .navbar-menu img:hover {
+      transform: scale(1.1); /* Slightly enlarge the flag on hover */
+  }
+
+  
+  .navbar-welcome {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .navbar-welcome button {
+    color: #1e1194d3;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  .navbar-welcome img {
+    width: 40px;   /* Set width of the flag image */
+    height: 40px;  /* Set height of the flag image */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-left: 15px; /* Add space between flags */
+    transition: transform 0.5s ease; /* Smooth hover effect */
+  }
+
+  /* Hover effect for flags */
+  .navbar-welcome img:hover {
+      transform: scale(1.1); /* Slightly enlarge the flag on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-menu {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+     
+  }
+  
