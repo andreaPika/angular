@@ -1,20 +1,19 @@
-/* Container principale per la ricerca */
+/* Contenitore principale della ricerca */
 .search-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Titolo della pagina di ricerca */
+/* Titolo della sezione di ricerca */
 .search-container h2 {
-  text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 20px;
   color: #333;
+  text-align: center;
 }
 
 /* Campo di ricerca */
@@ -25,19 +24,16 @@
 
 /* Bottone di ricerca */
 .search-button {
-  display: inline-block;
-  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
   font-size: 16px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;  /* Colore più scuro quando si passa sopra */
 }
 
 /* Spinner di caricamento */
@@ -45,59 +41,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   flex-direction: column;
-}
-
-.loading-spinner mat-progress-spinner {
-  margin-bottom: 10px;
-}
-
-/* Lista dei risultati trovati */
-.company-list {
-  margin-top: 30px;
-}
-
-.company-item {
-  background-color: #f2f2f2;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.company-name {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.company-address {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Messaggio se non ci sono risultati */
-.no-results {
   text-align: center;
+}
+
+.loading-spinner p {
+  margin-top: 10px;
   font-size: 16px;
   color: #666;
-  margin-top: 20px;
 }
 
-
-/* Sezioni degli results */
+/* Risultati della ricerca */
 .results-container {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .results-container h2 {
+  font-size: 24px;
+  color: #333;
   margin-bottom: 15px;
-  color: #3f51b5;
 }
 
 .results-container ul {
@@ -106,25 +68,48 @@
 }
 
 .results-container li {
-  margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .results-container li strong {
-  color: #3f51b5;
+  font-size: 18px;
+  color: #333;
 }
 
-/* Adattamento mobile */
+.results-container li span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Messaggio se non ci sono risultati */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #ff0000;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Adattamento per schermi piccoli */
 @media (max-width: 768px) {
   .search-container {
-    width: 95%;
+    padding: 15px;
   }
 
   .search-button {
-    width: 100%;
-    padding: 12px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .results-container h2 {
+    font-size: 20px;
+  }
+
+  .results-container li {
+    font-size: 14px;
   }
 }

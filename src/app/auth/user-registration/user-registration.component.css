@@ -1,56 +1,73 @@
+/* Contenitore del modulo di registrazione */
 .register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Titolo del modulo */
+.register-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Stili per i campi del modulo */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Pulsante di invio */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Link per login */
+.register-container p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-container p a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.register-container p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsività per schermi piccoli */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 15px;
+    max-width: 100%;
   }
-  
-  .register-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .register-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  .register-container button {
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .register-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  .register-container p {
-    margin-top: 10px;
+
+  button {
     font-size: 14px;
-    color: #666;
+    padding: 10px;
   }
-  
-  .register-container a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .register-container a:hover {
-    text-decoration: underline;
-  }
-  
+}

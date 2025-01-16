@@ -1,34 +1,81 @@
-/* user-list.component.css */
+/* Stile per il caricamento */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  padding: 20px;
+  font-weight: bold;
+}
+
+/* Stile per la sezione della lista utenti */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Tabella degli utenti */
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse;  /* Per unire i bordi delle celle */
+  margin-top: 20px;
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
+/* Intestazioni della tabella */
 th {
-  background-color: #f4f4f4;
+  background-color: #f4f4f4;  /* Colore di sfondo grigio chiaro per le intestazioni */
+  color: #333;  /* Colore del testo delle intestazioni */
+  padding: 10px;
+  text-align: left;  /* Allinea il testo a sinistra */
 }
 
+/* Celle della tabella */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;  /* Linea di separazione tra le righe */
+  color: #555;  /* Colore del testo delle celle */
+}
+
+/* Pulsante Dettagli */
 button {
-  background-color: #007bff;
-  color: white;
+  background-color: #4CAF50;  /* Colore verde per il pulsante */
+  color: white;  /* Colore del testo del pulsante */
   border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;  /* Cambia il cursore a mano */
+  border-radius: 4px;  /* Bordi arrotondati */
+  font-size: 14px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;  /* Colore più scuro quando il mouse è sopra */
 }
 
-.loading {
-  text-align: center;
-  font-size: 16px;
-  color: #666;
+button:focus {
+  outline: none;  /* Rimuove la bordatura al focus */
+}
+
+/* Styling per la tabella in modalità responsive */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    border: none;  /* Rimuove il bordo per schermi piccoli */
+  }
+
+  th, td {
+    display: block;
+    width: 100%;  /* Colonne occupano tutta la larghezza */
+    text-align: right;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  td {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
 }

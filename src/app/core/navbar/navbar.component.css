@@ -1,77 +1,72 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 64px;
-    background-color: #3f51b5; /* Colore primario */
-    color: #ffffff;
-  }
-  
-  .navbar-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar-menu button {
-    color: #1e1194d3;
-    font-size: 1rem;
-    margin-left: 10px;
-  }
-  
-  .navbar-menu button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-    .navbar-menu img {
-      width: 40px;   /* Set width of the flag image */
-      height: 40px;  /* Set height of the flag image */
-      cursor: pointer; /* Change cursor to pointer on hover */
-      margin-left: 15px; /* Add space between flags */
-      transition: transform 0.5s ease; /* Smooth hover effect */
-  }
+/* Styling per la mat-toolbar */
+mat-toolbar.navbar {
+  background-color: #f0f0f0; /* Grigio chiaro per lo sfondo della barra di navigazione */
+  color: #333; /* Colore del testo */
+  padding: 10px 20px; /* Spaziatura interna della barra */
+}
 
-  /* Hover effect for flags */
-  .navbar-menu img:hover {
-      transform: scale(1.1); /* Slightly enlarge the flag on hover */
-  }
+/* Titolo della barra di navigazione */
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Colore del testo */
+  margin-right: 20px; /* Spaziatura a destra del titolo */
+}
 
-  
-  .navbar-welcome {
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  
-  .navbar-welcome button {
-    color: #1e1194d3;
-    font-size: 1rem;
-    margin-left: 10px;
-  }
+/* Menu a discesa */
+.mat-menu-item {
+  font-size: 16px;
+  color: #333; /* Colore del testo dei menu */
+}
 
-  .navbar-welcome img {
-    width: 40px;   /* Set width of the flag image */
-    height: 40px;  /* Set height of the flag image */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    margin-left: 15px; /* Add space between flags */
-    transition: transform 0.5s ease; /* Smooth hover effect */
-  }
+/* Styling per i bottoni di navigazione */
+button.mat-button {
+  font-size: 16px;
+  padding: 8px 16px; /* Padding interno dei bottoni */
+  border-radius: 4px; /* Raggio di curvatura per i bordi */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Effetto di transizione per hover */
+}
 
-  /* Hover effect for flags */
-  .navbar-welcome img:hover {
-      transform: scale(1.1); /* Slightly enlarge the flag on hover */
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar-menu {
-      margin-top: 10px;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-    }
-     
-  }
-  
+/* Bottone azzurro */
+button.mat-button.primary {
+  background-color: #00bcd4; /* Colore azzurro */
+  color: white;
+}
+
+button.mat-button.primary:hover {
+  background-color: #0097a7; /* Colore di hover per il bottone azzurro */
+  transform: translateY(-2px); /* Effetto di spostamento verso l'alto */
+}
+
+/* Bottone verde */
+button.mat-button.success {
+  background-color: #4caf50; /* Colore verde */
+  color: white;
+}
+
+button.mat-button.success:hover {
+  background-color: #388e3c; /* Colore di hover per il bottone verde */
+  transform: translateY(-2px); /* Effetto di spostamento verso l'alto */
+}
+
+/* Immagini per la selezione della lingua */
+img {
+  width: 30px; /* Larghezza dell'immagine */
+  height: auto;
+  cursor: pointer; /* Cambia il cursore quando l'utente passa sopra l'immagine */
+  margin-left: 10px; /* Distanza tra le immagini della lingua */
+}
+
+/* Sezione benvenuto per utenti non autenticati */
+.navbar-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Sezione menu per utenti autenticati */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

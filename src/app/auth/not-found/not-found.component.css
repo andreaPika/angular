@@ -1,0 +1,59 @@
+/* Contenitore principale per la pagina di errore */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Titolo dell'errore */
+.error-page h1 {
+  font-size: 48px;
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Descrizione dell'errore */
+.error-page p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Pulsante per tornare indietro o alla home */
+.error-page .go-home {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.error-page .go-home:hover {
+  background-color: #45a049;
+}
+
+/* Responsività per schermi più piccoli */
+@media (max-width: 768px) {
+  .error-page h1 {
+    font-size: 36px;
+  }
+
+  .error-page p {
+    font-size: 18px;
+  }
+
+  .error-page .go-home {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
