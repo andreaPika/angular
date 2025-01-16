@@ -27,23 +27,25 @@
           </mat-error>
         </mat-form-field>
       </div>
-
       <div>
-        <label for="typology">Seleziona un'opzione:</label>
-        <select id="typology" [(ngModel)]="selectedOption">
-          <option *ngFor="let type of typology" [value]="type.value">
+      <mat-form-field appearance="outline">
+        <mat-label>Tipologia Azienda</mat-label>
+        <mat-select [(value)]="selectedOption">
+          <mat-option *ngFor="let type of typology" [value]="type.value">
             {{ type.label }}
-          </option>
-        </select>
-      </div>
-
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+     </div>
       <div>
-        <label for="ateco">Seleziona un'opzione:</label>
-        <select id="ateco" [(ngModel)]="selectedOption">
-          <option *ngFor="let ate of ateco" [value]="ate.value">
-            {{ ate.label }}
-          </option>
-        </select>
+        <mat-form-field appearance="outline">
+          <mat-label>Codice Ateco</mat-label>
+          <mat-select [(value)]="selectedOption">
+            <mat-option *ngFor="let ate of ateco" [value]="ate.value">
+              {{ ate.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div>
