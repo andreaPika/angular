@@ -1,10 +1,12 @@
 import { User } from "./user.model";
+import { Typology } from "./typology.model";
+import { Ateco } from "./ateco.model";
 
 export interface Company {
       name: string;
       phoneNumber: string;
-      typology: string;
-      ateco: string;
+      typology: Typology;
+      ateco: Ateco;
       services?: string[]; // Servizi offerti
       availability?: string[]; // Orari di disponibilità
 

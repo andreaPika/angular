@@ -3,6 +3,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Company } from '../model/company.model';
+import { Ateco } from '../model/ateco.model';
+import { Typology } from '../model/typology.model';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
@@ -21,7 +23,7 @@ export class CompanyService {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json'  // Aggiungi altri header se necessari
     });
-        
+
     return this.http.get<Company>(`${environment.apiBaseUrl}/api/company/${id}`, { headers });
 }
 
@@ -32,13 +34,13 @@ getAll(): Observable<any> {
   'Authorization': `Bearer ${token}`,
   'Content-Type': 'application/json'  // Aggiungi altri header se necessari
   });
-      
+
   return this.http.get<Company>(`${environment.apiBaseUrl}/api/company`, { headers });
 }
 
 searchCompanies(query: string): Observable<any[]> {
   const token = localStorage.getItem('auth_token'); // Recupera il token JWT
-  
+
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',
@@ -49,7 +51,7 @@ searchCompanies(query: string): Observable<any[]> {
 
 registerCompany(company: any): Observable<any> {
   const token = localStorage.getItem('auth_token'); // Recupera il token JWT
-  
+
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',
@@ -58,4 +60,26 @@ registerCompany(company: any): Observable<any> {
 
   return this.http.get<any[]>(`${environment.apiBaseUrl}/api/company/search/${company}`, { headers });;
 }
+
+  getAteco(): Observable<any> {
+    const token = localStorage.getItem('auth_token'); // Recupera il token JWT dal LocalStorage
+
+    const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'  // Aggiungi altri header se necessari
+    });
+
+    return this.http.get<Ateco>(`${environment.apiBaseUrl}/api/company/ateco`, { headers });
+}
+  getTypology(): Observable<any> {
+    const token = localStorage.getItem('auth_token'); // Recupera il token JWT dal LocalStorage
+
+    const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'  // Aggiungi altri header se necessari
+    });
+
+    return this.http.get<Typology>(`${environment.apiBaseUrl}/api/company/typology`, { headers });
+}
+
 }

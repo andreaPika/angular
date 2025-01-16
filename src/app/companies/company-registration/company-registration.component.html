@@ -31,8 +31,8 @@
       <mat-form-field appearance="outline">
         <mat-label>Tipologia Azienda</mat-label>
         <mat-select [(value)]="selectedOption">
-          <mat-option *ngFor="let type of typology" [value]="type.value">
-            {{ type.label }}
+          <mat-option *ngFor="let type of typology" [value]="type.codice">
+            {{ type.descrizione }}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -41,8 +41,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Codice Ateco</mat-label>
           <mat-select [(value)]="selectedOption">
-            <mat-option *ngFor="let ate of ateco" [value]="ate.value">
-              {{ ate.label }}
+            <mat-option *ngFor="let ate of ateco" [value]="ate.codice">
+              {{ ate.descrizione }}
             </mat-option>
           </mat-select>
         </mat-form-field>

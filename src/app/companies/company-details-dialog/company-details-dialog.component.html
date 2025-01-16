@@ -5,14 +5,16 @@
         <button class="close-button" (click)="closeDialog()">×</button>
       </div>
       <div class="dialog-body">
+
         <p><strong>Nome:</strong> {{ data.name }}</p>
-        <p><strong>Indirizzo:</strong> {{ data.address | json}}</p>
+        <p><strong>Indirizzo:</strong> {{ data.address.street}}</p>
         <p><strong>Numero Telefono:</strong> {{ data.phoneNumber }}</p>
-        <p><strong>Servizi:</strong> {{ data.services | json }}</p>
-        <p><strong>Disponibilita:</strong> {{ data.availability | json }}</p>
+        <p><strong>Tipologia:</strong> {{ data.typology.descrizione }}</p>
+        <p><strong>Ateco:</strong> {{ data.ateco.codice }} - {{ data.ateco.descrizione }}</p>
+        <p><strong>Servizi:</strong> {{ data.services }}</p>
+        <p><strong>Disponibilita:</strong> {{ data.availability }}</p>
 
       </div>
     </div>
   </div>
-  
-  
+

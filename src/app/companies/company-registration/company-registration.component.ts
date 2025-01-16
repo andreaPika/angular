@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CompanyService } from '../company.service';
 import { CommonModule } from '@angular/common';
@@ -15,21 +15,14 @@ import { MatSelectModule } from '@angular/material/select';
   templateUrl: './company-registration.component.html',
   styleUrls: ['./company-registration.component.css'],
 })
-export class CompanyRegistrationComponent {
+export class CompanyRegistrationComponent implements OnInit {
   companyForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
-  ateco = [
-        { value: '1', label: 'Opzione 1' },
-        { value: '2', label: 'Opzione 2' },
-        { value: '3', label: 'Opzione 3' },
-      ];
- typology = [
-            { value: '1', label: 'Opzione 1' },
-            { value: '2', label: 'Opzione 2' },
-            { value: '3', label: 'Opzione 3' },
-          ];
- selectedOption = '';
+  selectedOption = '';
+  ateco: any[] = [];
+  typology: any[] = [];
+
   constructor(private fb: FormBuilder, private companyService: CompanyService, private router: Router) {
     this.companyForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
@@ -50,12 +43,23 @@ export class CompanyRegistrationComponent {
       }),
     });
   }
+    ngOnInit(): void {
+
+    this.companyService.getAteco().subscribe((data) => {
+              console.log("chiamo Api Ateco", data)
+              this.ateco = data;
+            });
+
+         this.companyService.getTypology().subscribe((data) => {
+              console.log("chiamo Api typology", data)
+              this.typology = data;
+             });
+  }
 
   onSubmit(): void {
     if (this.companyForm.invalid) {
       return;
     }
-
     const companyData = this.companyForm.value;
     this.companyService.registerCompany(companyData).subscribe({
       next: (response) => {
