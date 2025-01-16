@@ -1,106 +1,70 @@
-/* Contenitore principale per il login */
+/* Styling for the login container */
 .login-container {
-  background-color: #fff;
-  padding: 20px;
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Titolo del modulo */
-.login-container h2 {
-  font-size: 24px;
-  color: #333;
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #4a4a4a; /* Dark gray for a neutral look */
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+mat-form-field {
+  width: 100%;
   margin-bottom: 20px;
 }
 
-/* Modulo di input */
-.login-container mat-form-field {
-  width: 100%;
+/* Input Fields */
+.login-input {
   margin-bottom: 15px;
 }
 
-/* Etichette dei campi */
-.login-container mat-label {
-  font-size: 16px;
-  color: #333;
-}
-
-/* Stile per gli input */
-.login-container input {
+button {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  font-size: 16px;
-}
-
-/* Input al focus */
-.login-container input:focus {
-  border-color: #4CAF50;
-  background-color: #fff;
-  outline: none;
-}
-
-/* Pulsante di invio */
-.login-container button {
-  background-color: #4CAF50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #6c757d; /* Elegant gray background */
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* Links Section */
+.links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.links a {
+  color: #8a7f7f; /* Soft neutral tone */
   font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 100%;
-}
-
-.login-container button:hover {
-  background-color: #45a049;
-}
-
-/* Link di registrazione */
-.login-container p {
-  font-size: 14px;
-  color: #555;
-}
-
-.login-container a {
-  color: #4CAF50;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-.login-container a:hover {
+.links a:hover {
+  color: #343a40; /* Darker gray when hovered */
   text-decoration: underline;
 }
 
-/* Messaggio di errore */
-.login-container .error-message {
-  color: #e74c3c;
-  font-size: 14px;
-  margin-top: 15px;
-}
-
-/* Responsività per schermi più piccoli */
-@media (max-width: 768px) {
-  .login-container {
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  .login-container h2 {
-    font-size: 20px;
-  }
-
-  .login-container mat-form-field {
-    margin-bottom: 12px;
-  }
-
-  .login-container button {
-    font-size: 14px;
-  }
+/* Error Message */
+.error-message {
+  color: #e74c3c; /* A subtle, chic red */
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }

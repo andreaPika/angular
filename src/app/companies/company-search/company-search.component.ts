@@ -14,6 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-company-search',
   templateUrl: './company-search.component.html',
+  styleUrls: ['./company-search.component.css'],
   imports: [TranslateModule, CommonModule, MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatListModule, MatDividerModule],
 })
 
@@ -25,7 +26,7 @@ export class SearchCompanyComponent {
   constructor(private companyService: CompanyService) {}
 
   search(): void {
-  
+
     if (this.query.trim()) {
       console.log('Query:', this.query);
       this.isLoading = true;

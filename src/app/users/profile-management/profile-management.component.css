@@ -1,79 +1,72 @@
-/* Contenitore principale del profilo */
 .profile-container {
-  background-color: #fff;  /* Sfondo bianco per il contenitore */
-  padding: 30px;  /* Spaziatura interna */
-  max-width: 600px;  /* Larghezza massima per contenere il modulo */
-  margin: 40px auto;  /* Centrare il contenitore orizzontalmente e lasciare spazio sopra e sotto */
-  border-radius: 8px;  /* Bordi arrotondati */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombra leggera per un effetto elevato */
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #ffffff; /* Sfondo bianco */
+  border: 1px solid #e0e0e0; /* Bordo sottile */
+  border-radius: 10px; /* Angoli arrotondati */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ombra per profondità */
 }
 
-/* Titolo della pagina di profilo */
 .profile-container h2 {
-  font-size: 24px;
-  color: #333;  /* Colore del titolo */
-  margin-bottom: 20px;  /* Spaziatura sotto il titolo */
-  text-align: center;  /* Allineamento al centro */
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 25px;
 }
 
-/* Styling per i campi di input */
-.mat-form-field.profile-input {
-  width: 100%;  /* I campi input occupano tutta la larghezza disponibile */
-  margin-bottom: 20px;  /* Spaziatura tra i campi */
+.profile-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spaziatura tra i campi */
 }
 
-/* Input di tipo testo (per nome, cognome, indirizzo, ecc.) */
-mat-form-field input.mat-input-element {
-  font-size: 16px;  /* Dimensione del testo all'interno dell'input */
-  padding: 8px;  /* Spaziatura interna */
+.profile-container mat-form-field {
+  width: 100%; /* Gli input occupano tutta la larghezza */
 }
 
-/* Mat-select per la scelta del genere */
-mat-select {
-  font-size: 16px;  /* Dimensione del font */
+.profile-container .profile-input {
+  margin-bottom: 20px;
 }
 
-/* Bottone per il salvataggio */
-button[mat-flat-button] {
-  background-color: #00bcd4;  /* Colore azzurro del bottone */
-  color: white;  /* Colore del testo */
-  width: 100%;  /* Bottone che occupa tutta la larghezza del modulo */
-  padding: 12px;  /* Spaziatura interna del bottone */
-  border-radius: 4px;  /* Bordi arrotondati */
-  transition: background-color 0.3s ease;  /* Transizione per l'effetto hover */
+.profile-container button {
+  width: 100%; /* Bottone a larghezza piena */
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff; /* Colore blu */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-button[mat-flat-button]:hover {
-  background-color: #0097a7;  /* Colore del bottone al passaggio del mouse */
+.profile-container button:hover {
+  background-color: #0056b3; /* Blu più scuro al passaggio del mouse */
 }
 
-/* Link "Change Password" */
-a {
-  display: inline-block;  /* Display inline-block per il link */
-  color: #00bcd4;  /* Colore del link */
-  text-decoration: none;  /* Rimuove la sottolineatura */
-  font-size: 16px;  /* Dimensione del font */
-  margin-top: 20px;  /* Spaziatura sopra il link */
-  text-align: center;  /* Allineamento al centro */
+.profile-container a {
+  text-align: center;
+  display: block;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;  /* Sottolinea il link al passaggio del mouse */
-  color: #0097a7;  /* Colore del link al passaggio del mouse */
+.profile-container a:hover {
+  text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .profile-container {
-    padding: 20px;  /* Spaziatura interna ridotta su schermi piccoli */
-    margin: 20px;  /* Distanza ridotta dal bordo della pagina */
-  }
+.profile-container .profile-input input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /* Bordo degli input */
+  transition: border-color 0.3s ease;
+}
 
-  button[mat-flat-button] {
-    padding: 10px;  /* Spaziatura interna del bottone ridotta per schermi piccoli */
-  }
-
-  mat-form-field.profile-input {
-    margin-bottom: 15px;  /* Ridurre la spaziatura tra i campi su schermi piccoli */
-  }
+.profile-container .profile-input input:focus {
+  border-color: #007bff; /* Colore bordo quando l'input è in focus */
+  outline: none;
 }

@@ -1,93 +1,72 @@
-/* Contenitore principale per gli appuntamenti */
-.appointments-container {
-  background-color: #f9f9f9;
-  padding: 20px;
+/* General Container Styling */
+.appointments-container, .booking-container {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 30px;
+  background-color: #f8f9fa;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.appointments-container h2 {
-  font-size: 24px;
+h2 {
+  font-size: 1.8rem;
   color: #333;
-  margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Lista degli appuntamenti */
-.appointments-container ul {
+/* Appointments List */
+ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.appointments-container li {
-  background-color: #fff;
+li {
   padding: 15px;
   margin-bottom: 15px;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
 }
 
-.appointments-container li strong {
-  color: #333;
+li strong {
+  color: #555;
   font-weight: bold;
 }
 
-.appointments-container li br {
-  margin-bottom: 5px;
+li br {
+  margin-bottom: 8px;
 }
 
-.appointments-container li {
-  font-size: 16px;
-  color: #555;
-}
-
-/* Contenitore per la sezione di prenotazione */
-.booking-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.booking-container h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Calendario di prenotazione */
+/* Booking Calendar Section */
 .booking-calendar {
-  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 .calendar {
-  width: 100%;
-  padding: 10px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
+  margin-top: 20px;
 }
 
-/* Modulo di prenotazione */
+/* Booking Form */
 .booking-form-container {
-  padding: 20px;
-  background-color: #fafafa;
+  background-color: #ffffff;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.booking-form-container h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-/* Stile per i campi del modulo */
 .booking-form-container label {
-  font-size: 16px;
-  color: #333;
   display: block;
   margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
 }
 
 .booking-form-container input,
@@ -95,72 +74,59 @@
 .booking-form-container textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
 }
 
-.booking-form-container input[type="datetime-local"] {
-  padding: 10px;
-  font-size: 16px;
+.booking-form-container input:focus,
+.booking-form-container select:focus,
+.booking-form-container textarea:focus {
+  border-color: #6c757d;
+  outline: none;
 }
 
-.booking-form-container textarea {
-  font-size: 14px;
-  resize: vertical;
-  min-height: 100px;
-}
-
-/* Pulsante di invio */
 .booking-form-container button {
-  background-color: #4CAF50;
+  width: 100%;
+  padding: 12px;
+  background-color: #6c757d;
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 4px;
-  width: 100%;
+  transition: background-color 0.3s;
 }
 
 .booking-form-container button:hover {
-  background-color: #45a049;
+  background-color: #5a6268;
 }
 
-/* Messaggi di errore */
-.booking-form-container .error-message {
+/* Error Message Styling */
+.error-message {
   color: #e74c3c;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-top: 15px;
+  text-align: center;
 }
 
-/* Adattamenti per schermi piccoli */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .appointments-container {
-    padding: 15px;
-  }
-
-  .booking-container {
-    padding: 15px;
-  }
-
-  .booking-form-container {
-    padding: 15px;
-  }
-
-  .booking-form-container label {
-    font-size: 14px;
+  .appointments-container, .booking-container {
+    padding: 20px;
   }
 
   .booking-form-container input,
   .booking-form-container select,
   .booking-form-container textarea {
-    font-size: 14px;
+    padding: 8px;
+    font-size: 0.95rem;
   }
 
   .booking-form-container button {
-    font-size: 14px;
+    font-size: 1rem;
   }
 }

@@ -1,88 +1,77 @@
-/* Contenitore principale per la registrazione azienda */
-.company-registration {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
+/* Styling for the company registration container */
+.company-registration-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Titolo della pagina */
-.company-registration h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
+h2 {
   text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
 }
 
-/* Form Layout */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Sezione per ciascun campo */
-mat-form-field {
+h3 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #333;
   margin-bottom: 20px;
 }
 
-/* Titoli delle sezioni */
-h3 {
-  font-size: 22px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  color: #333;
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-/* Pulsante di Registrazione */
+/* Input Fields */
+.company-registration-input {
+  margin-bottom: 15px;
+}
+
 button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Pulsante disabilitato */
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+button:hover {
+  background-color: #5a6268;
 }
 
-/* Messaggi di successo o errore */
+/* Success and Error Messages */
 .success {
-  color: green;
-  font-size: 16px;
+  color: #28a745;
+  font-size: 1rem;
   text-align: center;
   margin-top: 20px;
 }
 
 .error {
-  color: red;
-  font-size: 16px;
+  color: #dc3545;
+  font-size: 1rem;
   text-align: center;
   margin-top: 20px;
 }
 
-/* Stile per i messaggi di errore nei campi */
-mat-error {
-  font-size: 14px;
-  color: red;
+/* Mat-Select and Mat-Input Fields */
+mat-select, mat-input {
+  margin-bottom: 20px;
 }
 
-/* Adattamento per schermi piccoli */
-@media (max-width: 768px) {
-  .company-registration {
-    padding: 15px;
-  }
-
-  form {
-    padding: 10px;
-  }
-
-  button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
+/* Error message styling */
+mat-error {
+  font-size: 0.9rem;
+  color: #dc3545;
+  margin-top: 5px;
 }

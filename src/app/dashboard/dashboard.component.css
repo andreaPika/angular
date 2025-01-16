@@ -1,110 +1,100 @@
-/* Aggiungi uno sfondo alla pagina */
-body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f9fa; /* Colore di sfondo chiaro per l'intera pagina */
 }
 
-/* Stile per il caricamento */
-.loading {
-  text-align: center;
-  font-size: 18px;
-  color: #666;
-  padding: 20px;
+mat-toolbar {
+  background-color: #343a40; /* Colore scuro per la toolbar */
+  color: white;
+  padding: 15px 30px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.user-info span {
   font-weight: bold;
 }
 
-.spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Stile per la sezione della lista utenti */
-h2 {
-  font-size: 24px;
-  margin-bottom: 30px;  /* Aumentato il margine */
-  color: #333;
-}
-
-/* Tabella degli utenti */
-table {
-  width: 100%;
-  border-collapse: collapse;
+.dashboard-content {
+  flex-grow: 1;
+  padding: 40px 30px;
   margin-top: 20px;
+  background-color: white; /* Sfondo bianco per la sezione principale */
+  border-radius: 10px; /* Angoli più arrotondati */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombra leggera per profondità */
 }
 
-/* Intestazioni della tabella */
-th {
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 10px;
-  text-align: left;
-  border-bottom: 2px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.dashboard-content h2 {
+  font-size: 2rem;
+  color: #333; /* Colore scuro per il titolo */
+  margin-bottom: 20px;
 }
 
-/* Celle della tabella */
-td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #555;
+.dashboard-content strong {
+  font-size: 1.3rem;
+  color: #555; /* Colore più chiaro per i testi dei ruoli */
+  display: block;
+  margin-top: 10px;
 }
 
-/* Pulsante Dettagli */
-button {
-  background-color: #4CAF50;
+.dashboard-content div {
+  margin-top: 30px;
+}
+
+.dashboard-container mat-button {
+  color: #6c757d; /* Colore chiaro per i bottoni */
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+  border: 1px solid #ccc; /* Bordi sottili e chiari per i bottoni */
+}
+
+.dashboard-container mat-button:hover {
+  background-color: #e2e6ea; /* Colore di sfondo chiaro per l'effetto hover */
+}
+
+.dashboard-container .logout {
+  background-color: #dc3545; /* Rosso per il logout */
   color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-  margin: 5px;
 }
 
-button:hover {
-  background-color: #45a049;
+.dashboard-container .logout:hover {
+  background-color: #c82333; /* Rosso più scuro al passaggio del mouse */
 }
 
-button:focus {
-  outline: none;
+.dashboard-container .role-specific-content {
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 8px;
+  background-color: #f1f3f5; /* Colore di sfondo più neutro per i contenuti specifici */
 }
 
-/* Effetto hover per le righe della tabella */
-tr:hover {
-  background-color: #f9f9f9;
+.dashboard-container .role-specific-content h3 {
+  font-size: 1.6rem;
+  color: #495057; /* Colore più scuro per le intestazioni dei contenuti */
+  margin-bottom: 15px;
 }
 
-/* Styling per la tabella in modalità responsive */
-@media (max-width: 768px) {
-  table {
-    width: 100%;
-    border: none;
-  }
+.dashboard-container .role-specific-content p {
+  font-size: 1rem;
+  color: #495057; /* Colore per il testo dei contenuti */
+}
 
-  th, td {
-    display: block;
-    width: 100%;
-    text-align: right;
-  }
+.dashboard-container .role-specific-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 
-  th {
-    background-color: #f4f4f4;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-
-  td {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-  }
+.dashboard-container .role-specific-content li {
+  font-size: 1rem;
+  color: #6c757d; /* Colore del testo nei dettagli */
+  margin-bottom: 10px;
 }
