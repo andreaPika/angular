@@ -1,6 +1,6 @@
 <div class="company-registration">
     <h2>Register a Company</h2>
-  
+
     <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
       <div>
         <mat-form-field appearance="fill">
@@ -14,7 +14,7 @@
           </mat-error>
         </mat-form-field>
       </div>
-  
+
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Phone Number</mat-label>
@@ -27,7 +27,25 @@
           </mat-error>
         </mat-form-field>
       </div>
-  
+
+      <div>
+        <label for="typology">Seleziona un'opzione:</label>
+        <select id="typology" [(ngModel)]="selectedOption">
+          <option *ngFor="let type of typology" [value]="type.value">
+            {{ type.label }}
+          </option>
+        </select>
+      </div>
+
+      <div>
+        <label for="ateco">Seleziona un'opzione:</label>
+        <select id="ateco" [(ngModel)]="selectedOption">
+          <option *ngFor="let ate of ateco" [value]="ate.value">
+            {{ ate.label }}
+          </option>
+        </select>
+      </div>
+
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Services</mat-label>
@@ -47,7 +65,7 @@
           </mat-error>
         </mat-form-field>
       </div>
-  
+
       <h3>Address</h3>
       <div formGroupName="address">
         <mat-form-field appearance="fill">
@@ -57,7 +75,7 @@
             Street is required.
           </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field appearance="fill">
           <mat-label>City</mat-label>
           <input matInput formControlName="city" />
@@ -65,7 +83,7 @@
             City is required.
           </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field appearance="fill">
           <mat-label>Postal Code</mat-label>
           <input matInput formControlName="postalCode" />
@@ -73,7 +91,7 @@
             Postal code is required.
           </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field appearance="fill">
           <mat-label>Country</mat-label>
           <input matInput formControlName="country" />
@@ -82,13 +100,12 @@
           </mat-error>
         </mat-form-field>
       </div>
-  
+
       <button mat-raised-button color="primary" type="submit" [disabled]="companyForm.invalid">
         Register
       </button>
     </form>
-  
+
     <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
     <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
   </div>
-  

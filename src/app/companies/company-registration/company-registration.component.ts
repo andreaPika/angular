@@ -10,7 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-company-registration',
-  imports: [TranslateModule, CommonModule, RouterModule,MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule ],
+  imports: [MatSelectModule ,TranslateModule, CommonModule, RouterModule,MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule ],
   templateUrl: './company-registration.component.html',
   styleUrls: ['./company-registration.component.css'],
 })
@@ -18,11 +18,23 @@ export class CompanyRegistrationComponent {
   companyForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
-
+  ateco = [
+        { value: '1', label: 'Opzione 1' },
+        { value: '2', label: 'Opzione 2' },
+        { value: '3', label: 'Opzione 3' },
+      ];
+ typology = [
+            { value: '1', label: 'Opzione 1' },
+            { value: '2', label: 'Opzione 2' },
+            { value: '3', label: 'Opzione 3' },
+          ];
+ selectedOption = '';
   constructor(private fb: FormBuilder, private companyService: CompanyService, private router: Router) {
     this.companyForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?[0-9]+$/)]],
+      typology: [''],
+      ateco: [''],
       services: [''],
       available: [''],
       address: this.fb.group({
