@@ -4,7 +4,7 @@
     "login": "Login",
     "home":"Welcome to Our Platform",
     "account": "Please to access your dashboard"
-  }, 
+  },
   "login":
     {
       "title": "Login",
@@ -36,7 +36,7 @@
     "companyRegistration": "Registrazione Company",
     "companyList":"Company List",
     "userList": "User List",
-    "searchCompany": "Search Companies",
+    "search": "Search",
     "booking": "Booking",
     "profile": "Accounts Manager",
     "logout": "Logout"

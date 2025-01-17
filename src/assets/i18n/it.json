@@ -27,7 +27,7 @@
       "account": "Hai già un account?",
       "login": "fai login"
     },
-    
+
   "nav":
   {
     "title": "Gestione Anagrafica",
@@ -38,7 +38,7 @@
     "companyRegistration": "Registrazione Azienda",
     "companyList":"Lista Azienda",
     "userList": "Lista utenti",
-    "searchCompany": "Ricerca Azienda",
+    "search": "Ricerca",
     "booking": "Prenotazione",
     "profile": "Gestione Profilo",
     "logout": "Logout"

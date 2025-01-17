@@ -11,7 +11,7 @@
       <button mat-menu-item routerLink="/dashboard">Dashboard</button>
       <button mat-menu-item *ngIf="userRole === 'admin'" routerLink="/company-registration">{{ 'nav.companyRegistration' | translate }}</button>
       <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client'" routerLink="/companyList">{{ 'nav.companyList' | translate }}</button>
-      <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client'" routerLink="/search-companies">{{ 'nav.searchCompany' | translate }}</button>
+      <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client'" routerLink="/search">{{ 'nav.search' | translate }}</button>
       <button mat-menu-item *ngIf="userRole === 'admin' || userRole === 'client' || userRole === 'company'" routerLink="/booking">{{ 'nav.booking' | translate }}</button>
       <button mat-menu-item *ngIf="userRole === 'admin'" routerLink="/userList">{{ 'nav.userList' | translate }}</button>
     </mat-menu>

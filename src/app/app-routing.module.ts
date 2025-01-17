@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CompanyListComponent } from './companies/company-list/company-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-import { SearchCompanyComponent } from './companies/company-search/company-search.component';
+import { SearchComponent } from './search/search.component';
 import { BookingComponent } from './booking/booking.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ChangePasswordComponent } from './auth/change-password/change-password.component';
@@ -23,7 +23,7 @@ export const routes: Routes = [
   { path: 'userList', component: UserListComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent},
   { path: 'user-register', component: UserRegistrationComponent},
-  { path: 'search-companies', component: SearchCompanyComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard] },
   { path: 'booking', component: BookingComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileManagementComponent, canActivate: [AuthGuard] },

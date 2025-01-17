@@ -1,0 +1,46 @@
+<div *ngIf="risultati.length > 0">
+  <h3>Risultati:</h3>
+  <ul>
+    <li *ngFor="let risultato of risultati">
+      <p><strong>Nome:</strong> {{ risultato.firstName }} {{ risultato.lastName }}</p>
+      <p><strong>Email:</strong> {{ risultato.email }}</p>
+      <p><strong>Indirizzo:</strong> {{ risultato.address }}</p>
+      <p><strong>Numero Telefono:</strong> {{ risultato.phoneNumber }}</p>
+      <p><strong>Data di Nascita:</strong> {{ risultato.dateOfBirth }}</p>
+      <p><strong>Genere:</strong> {{ risultato.gender }}</p>
+      <p><strong>Ruolo:</strong> {{ risultato.role }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="risultati.length === 0">
+  <p>Nessun risultato trovato.</p>
+</div>
+<div>
+  <h2>Filtri di ricerca</h2>
+  <label for="query">Testo generale:</label>
+  <input id="query" type="text" [(ngModel)]="query" placeholder="Testo libero" />
+
+  <label for="nome">Nome:</label>
+  <input id="nome" type="text" [(ngModel)]="nome" placeholder="Filtra per nome" />
+
+  <label for="cognome">Cognome:</label>
+  <input
+    id="cognome"
+    type="text"
+    [(ngModel)]="cognome"
+    placeholder="Filtra per cognome"
+  />
+
+  <label for="indirizzo">Indirizzo:</label>
+  <input
+    id="indirizzo"
+    type="text"
+    [(ngModel)]="indirizzo"
+    placeholder="Filtra per indirizzo"
+  />
+
+  <button (click)="onFilteredSearch()">Cerca</button>
+</div>
+
+
