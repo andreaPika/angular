@@ -23,9 +23,6 @@ export class RegisterComponent {
     password: string = '';
     role: string = '';
     companyId: string = '';
-  
-
-  roles = ['professionist', 'azienda', 'client']; // Ruoli disponibili
 
   constructor(private authService: AuthService, private router: Router) {}
 

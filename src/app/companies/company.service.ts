@@ -58,7 +58,7 @@ registerCompany(company: any): Observable<any> {
   });
 
 
-  return this.http.get<any[]>(`${environment.apiBaseUrl}/api/company/search/${company}`, { headers });;
+  return this.http.post<any[]>(`${environment.apiBaseUrl}/api/company', ${company}`, { headers });;
 }
 
   getAteco(): Observable<any> {
