@@ -10,7 +10,7 @@
         <tr>
           <th>Nome Azienda</th>
           <th>Indirizzo</th>
-          <th>Id</th>
+          <th>Calendario</th>
           <th>Azioni</th>
         </tr>
       </thead>
@@ -28,9 +28,19 @@
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434504695!2d144.9554313153165!3d-37.816178979751894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5776bfa388d948!2sFlinders%20Street%20Station!5e0!3m2!1sen!2sau!4v1673892596453!5m2!1sen!2sau">
             </iframe>
           </div></td>
-          <td>{{ company._id}}</td>
+          <!-- Calendario prenotazioni -->
+          <div>
+            <full-calendar
+              [events]="getCompanyEvents(company)"
+              [options]="calendarOptions">
+            ></full-calendar>
+          </div>
           <td>
-            <button (click)="viewCompanyDetails(company)">Dettagli</button>
+            <select (change)="onActionSelect($event, company)" class="action-select">
+              <option value="" disabled selected>Scegli un'azione</option>
+              <option value="details">Richiedi Informazioni</option>
+              <option value="book">Prenotare Appuntamento</option>
+            </select>
           </td>
         </tr>
       </tbody>
